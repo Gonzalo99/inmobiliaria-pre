@@ -1,0 +1,262 @@
+<div class="row">
+
+    <div class="col-lg-3 col-xs-6 btn-group  head">
+        <button class="btn btn-secondary dropdown-toggle boton-menu" id="dp-categorias" data-toggle="dropdown">Menu</button>
+        <div class="dropdown-menu" aria-labelledby="dp-categorias">
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" (click)="closeSession()"><img style="padding-top: 3px;" class="float-left mr-4 mt-1 img-fluid" src="../assets/images/cerrar.svg" height="10" width="10" alt="Icono close">Cerrar Sesion</a>
+        </div>
+    </div>
+
+    <div class="col-lg-6 col-xs-12 head d-flex justify-content-center align-items-center" style="font-size: 19px;">
+        <div style="float: left;">Técncica</div>
+        <div style="float: left; padding-left: 8px; padding-right: 8px; color: white;">&</div> 
+        <div style="float: left;">Arquitectura</div>
+    </div>
+
+    <div class="col-lg-3 col-xs-6 head">
+        <img class="float-right logo mr-4 img-fluid" src="../assets/images/logo-inmobiliaria.svg" height="110" width="150" alt="Icono inmobiliaria">
+    </div>
+
+</div>
+
+<button class="btn btn-primary control" data-toggle="modal" data-target="#fm-modal-grid" style="visibility: hidden;"></button>
+    <div class="modal fade" id="fm-modal-grid" tabindex="-1" role="dialog" aria-labelledby="fm-modal-grid" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: brown;">
+                    <h5 class="modal-title" style="color: gray;">Acceso</h5>
+                </div>
+
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+
+                            
+                            <form #formEmail="ngForm">
+
+                                <div class="form-group row">
+                                    <div class="col-lg-12 mb-3">
+                                        <label>Usuario</label>
+                                        <input type="text" #user="ngModel" [(ngModel)]="usuario" class="form-control" name="user">
+                                    </div>
+                                    <div class="col-lg-12 mb-3">
+                                        <label>Password</label>
+                                        <input type="password" #password="ngModel" [(ngModel)]="passwd" class="form-control" name="password">
+                                    </div>
+                                </div>
+                    
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            <div class="modal-footer">
+                <p class="error-login" style="color: red; visibility: hidden;">Usuario o contraseña incorrectos</p>
+                <button class="btn btn-success" (click)="openSession()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col">
+        <div id="accordion">
+            
+            <div class="card">
+                <div class="card-header" id="heading">
+                    <h5 class="mb-0">
+
+                        <button class="btn btn-addInmueble btn-link" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapse">
+                            <img style="padding-top: 3px;" class="float-left mr-4 img-fluid" src="../assets/images/add.svg" height="20" width="20" alt="Icono close">Añadir inmueble
+                        </button>
+
+                        <div class="alert alert-success" style="visibility: hidden;">
+                            Inmueble creado correctamente.
+                        </div>
+
+                    </h5>
+                </div>
+                <div id="collapse" class="collapse show" arial-labelledby="heading" data-parent="#accordion">
+                    <div class="card-body">
+
+                        <form #formInmueble="ngForm">
+                            <div class="form-group row">
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="titulo">Titulo*</label>
+                                    <input type="text" #titulo="ngModel" [(ngModel)]="new_inmueble.titulo" class="form-control" name="titulo" id="titulo" required>
+                                </div>
+
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="tipo">Tipo*</label>
+                                    <select type="text" #tipo="ngModel" [(ngModel)]="new_inmueble.tipo" class="form-control" name="tipo" id="tipo" required>
+                                        <option value="casa">Casa</option>
+                                        <option value="piso">Piso</option>
+                                        <option value="chalet">Chalet</option>
+                                        <option value="locales">Locales</option>
+                                        <option value="naves">Naves</option>
+                                        <option value="salares">Solares</option>
+                                        <option value="fincas">Fincas</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="metros">Metros*</label>
+                                    <input type="number" #metros="ngModel" [(ngModel)]="new_inmueble.metros" class="form-control" name="metros" id="metros" required>
+                                </div>
+                            </div>
+                
+                            <div class="form-group row">
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="correo">Precio*</label>
+                                    <input type="number" #precio="ngModel" [(ngModel)]="new_inmueble.precio" class="form-control" name="precio" id="precio" required>
+                                </div>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="correo">Dirección*</label>
+                                    <input type="text" #direccion="ngModel" [(ngModel)]="new_inmueble.direccion" class="form-control" name="direccion" id="direccion" required>
+                                </div>
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="estado">Estado*</label>
+                                    <select type="text" #estado="ngModel" [(ngModel)]="new_inmueble.estado" class="form-control" name="estado" id="estado" required>
+                                        <option value="nuevo">Nuevo</option>
+                                        <option value="usado">Usado</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div *ngIf="new_inmueble.tipo == 'piso'" class="form-group row opcional">
+                                
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="planta">Planta*</label>
+                                    <input type="number" #planta="ngModel" [(ngModel)]="new_inmueble.planta" class="form-control" name="planta" id="planta">
+                                </div>
+
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="ascensor">Ascensor*</label>
+                                    <select type="text" #ascensor="ngModel" [(ngModel)]="b_ascensor" class="form-control" name="ascensor" id="ascensor">
+                                        <option value="true">Si</option>
+                                        <option value="false">No</option>
+                                    </select>
+                                </div>
+                
+                            </div>
+                
+                            <div class="form-group row">
+
+                                <div class="col-12 mb-3">
+                                    <label for="contenido">Descripción*</label>
+                                    <textarea type="text" #asunto="ngModel" [(ngModel)]="new_inmueble.contenido" class="form-control" name="contenido" id="contenido" required>
+                                    </textarea>
+                                </div>
+                
+                            </div>
+
+                            <div class="form-group row">  
+
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="garaje">Garaje*</label>
+                                    <select type="text" #garaje="ngModel" [(ngModel)]="b_garaje" class="form-control" name="garaje" id="garaje" required>
+                                        <option value="true">Si</option>
+                                        <option value="false">No</option>
+                                    </select>    
+                                </div>   
+                                
+                                <div class="col-12 col-md-4 mb-3">
+                                    <label for="oferta">Oferta*</label>
+                                    <select type="text" #oferta="ngModel" [(ngModel)]="b_oferta" class="form-control" name="oferta" id="oferta" required>
+                                        <option value="true">Si</option>
+                                        <option value="false">No</option>
+                                    </select>    
+                                </div> 
+                                
+                                <div *ngIf="new_inmueble.estado == 'usado'" class="col-12 col-md-4 mb-3">
+                                    <label for="antiguedad">Antiguedad*</label>
+                                    <input type="number" #antiguedad="ngModel" [(ngModel)]="new_inmueble.antiguedad" class="form-control" name="antiguedad" id="antiguedad">
+                                </div>  
+
+                            </div>
+
+                            <div class="form-group row"> 
+
+                                <div class="col-12 col-md-6 mb-3">
+                                    <label for="imagen">Imagen</label>
+                                    <input type="file" class="form-control" (change)="fileChangeEvent($event)"/> 
+                                </div>
+
+                                <div class="imagenes-add">
+
+                                </div>
+
+                            </div>    
+                
+                            <div class="form-group row">
+                                <div class="col-12 text-center">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-sm-9 col-md-4 mt-3">
+                                            <button class="btn btn-danger btn-block" [disabled]="!formInmueble.form.valid" type="submit" (click)="addInmueble()">Crear</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="row" style="margin-top: 100px;">
+
+    <div class="form-group ml-5 filtro">
+        <select type="text" class="form-control" name="filterOferta" placeholder="Search..." [(ngModel)]="filterOferta">
+            <option value=""></option>
+            <option value="1">Si</option>
+            <option value="0">No</option>
+        </select>
+        <small class="form-text text-muted">Filtrar Oferta</small>
+    </div>
+
+    <div class="col-12">
+        <table class="table table-sm table-hover table-bordered">
+            <thead class="table-danger">
+                <tr>
+                    <th>Titulo</th>
+                    <th>Tipo</th>
+                    <th>Metros</th>
+                    <th>Dirección</th>
+                    <th>Precio</th>
+                    <th>Oferta</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let inmueble of inmuebles | filterAdmin: filterOferta">
+                <td>{{inmueble.titulo}}</td>
+                <td>{{inmueble.tipo}}</td>
+                <td>{{inmueble.metros}}</td>
+                <td>{{inmueble.direccion}}</td>
+                <td>{{inmueble.precio}}</td>
+                <td *ngIf="inmueble.oferta == true">Si</td>
+                <td *ngIf="inmueble.oferta == false">No</td>
+                <td>
+                    <a [routerLink]="['/detail-inmueble-admin', inmueble.id]" class="btn btn-md btn-success ml-4">Ver</a>
+                    <a [routerLink]="['/edit-inmueble', inmueble.id]" class="btn btn-md btn-warning ml-2">Editar</a>
+                    <a (click)="borrarConfirm(inmueble.id)" class="btn btn-md btn-danger ml-2">Borrar</a>
+                </td>
+
+                <div class="seguro" *ngIf="confirmado == inmueble.id">
+                    <a (click)="onDeleteInmueble(inmueble.id)" class="btn btn-md btn-success ml-2">
+                        Confirmar
+                    </a>
+                    <a (click)="cancelarConfirm()" class="btn btn-md btn-danger ml-2 mt-1">Cancelar</a>
+                </div>
+
+            </tr>
+
+        </table>
+    </div>
+</div>

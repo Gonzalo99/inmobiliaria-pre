@@ -1,0 +1,57 @@
+<!--Cabecera-->
+<div class="row head">
+
+    <div class="col-lg-12 titulo d-flex justify-content-center">
+
+        <a class="fa fa-arrow-left pr-5 pt-1 return" [routerLink]="['/admin']"></a>
+
+        <div style="float: left;">Técncica</div>
+        <div style="float: left; padding-left: 8px; padding-right: 8px; color: #e80f46;">&</div> 
+        <div style="float: left;">Arquitectura</div>
+
+    </div>
+
+</div>
+
+<div *ngIf="imagenes" class="row mt-5">
+
+    <div class="col d-flex justify-content-center">
+
+        <img *ngFor="let imagen of imagenes" class="p-2" src="{{url_img}}{{imagen.ruta}}" width="170" height="170">
+
+    </div>
+
+</div>
+
+<div class="row mt-4">
+
+    <div class="col-lg-4 col-xs-11 adcesorios" style="background-color: #EAE6E6">
+        <p><code>Dirección: {{inmueble.direccion}}</code></p>
+        <p><code>Precio: {{inmueble.precio}}</code></p>
+        <p><code>Estado: {{inmueble.estado}}</code></p>
+        <p *ngIf="inmueble.garaje == true"><code>Garaje: Si</code></p>
+        <p *ngIf="inmueble.garaje == false"><code>Garaje: No</code></p>
+        <p><code>Metros: {{inmueble.metros}}</code></p>
+        <p *ngIf="inmueble.oferta == true"><code>Oferta: Si</code></p>
+        <p *ngIf="inmueble.oferta == false"><code>Oferta: No</code></p>
+        <p><code>Tipo: {{inmueble.tipo}}</code></p>
+        <p *ngIf="inmueble.tipo == 'piso' && inmueble.ascensor == true"><code>Ascensor: Si</code></p>
+        <p *ngIf="inmueble.tipo == 'piso' && inmueble.ascensor == false"><code>Ascensor: No</code></p>
+        <p *ngIf="inmueble.tipo == 'piso'"><code>Planta: {{inmueble.planta}}</code></p>
+
+    </div>
+
+    <div class="col-lg-1 d-none d-lg-block" style="background-color: #EAE6E6">
+        <div class="line"></div>
+    </div>
+
+    <div class="col-lg-7 col-xs-12 adcesorios" style="background-color: #EAE6E6">
+        <h3>{{inmueble.titulo}}</h3>
+        <p>{{inmueble.contenido}}</p>
+    </div>
+
+    <div class="col-lg-12 d-flex justify-content-center" style="background-color: #EAE6E6">
+        <i class="fa fa-eye pt-4 pb-3"> {{inmueble.visitas}}</i>
+    </div>
+
+</div>

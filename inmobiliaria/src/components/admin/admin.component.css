@@ -1,0 +1,36 @@
+.head {
+    background-color: #e80f46;
+}
+
+.boton-menu {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.opcional {
+    border: 1px solid #E4E3E3;
+    border-radius: 4px;
+}
+
+.imagenes-add {
+    margin-top: 17px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seguro {
+    border: 1px solid darkgrey;
+    border-radius: 3px;
+    padding: 5px;
+    margin-left: 5px;
+    background-color: #ECECEC;
+}
+
+.filtro {
+    border: 1px solid #E5E5E5;
+    border-radius: 5px;
+    padding: 17px 83px;
+}

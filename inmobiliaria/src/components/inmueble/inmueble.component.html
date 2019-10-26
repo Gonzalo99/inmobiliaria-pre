@@ -1,0 +1,103 @@
+<nav class="navbar navbar-expand-lg head no-gutters">
+    <!-- .container nos permite centrar el contenido de nuestro menu, esta clase es opcional y podemos encerrar el menu <nav> o incluir el contenedor dentro del <nav> -->
+    <div class="container">
+        <!-- Nos sirve para agregar un logotipo al menu -->
+        <img class="float-left logo img-fluid navbar-brand" src="../assets/images/logo-inmobiliaria.svg" height="110" width="150" alt="Icono inmobiliaria">
+
+        <!-- Nos permite usar el componente collapse para dispositivos moviles -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menu de Navegacion">
+            <img class="img-fluid" src="../assets/images/menu.svg" height="30" width="30" alt="Icono menu">  
+        </button>
+
+        <div class="collapse navbar-collapse ml-5" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/inmuebles']" [routerLinkActive]="['activado']">Inmuebles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/information']" [routerLinkActive]="['activado']">Quienes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/contactar']" [routerLinkActive]="['activado']">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/hipoteca']" [routerLinkActive]="['activado']">Calcula tu Hipoteca</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="row" style="z-index: 10;">
+
+    <div class="col-10 offset-1 return" style="margin-top: 50px;">
+        <a class="fa fa-arrow-left pr-5 pt-1 return" [routerLink]="['/inmuebles']"></a>
+    </div>
+
+    <div class="col-8 offset-2 img-anuncio">
+
+        <div>
+
+            <div id="imagen">
+                <button class="boton-ret" (click)="retroceder()"><i class="fa fa-arrow-circle-left"></i></button>
+                <img src="{{url_global}}{{url_img}}" alt="" width="100%" height="370px">
+                <button class="boton-ava" (click)="avanzar()"><i class="fa fa-arrow-circle-right"></i></button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-8 offset-2 mt-3">
+        <span class="badge badge-secondary p-2 ml-3 price">{{inmueble.precio}} €</span>
+        <i class="fas fa-compress-arrows-alt pl-5"> {{inmueble.metros}} M<sup>2</sup></i>
+        <i *ngIf="inmueble.tipo == 'piso'" class="fa fa-building pl-5"> {{inmueble.planta}}º Planta</i>
+        <i *ngIf="inmueble.tipo == 'piso'" class="fa fa-eject pl-5"> Ascensor</i>
+    </div>
+
+    <div class="col-8 offset-2 mt-4">
+        <p class="title-inmueble pl-5">{{inmueble.titulo}}</p>
+        <hr>
+    </div>
+
+    <div class="col-8 offset-2 mt-3">
+        <p>{{inmueble.contenido}}</p>
+        <p>Dirección: {{inmueble.direccion}}</p>
+    </div>
+
+    <div class="col-8 offset-2 mt-3">
+        <hr>
+        <h4>Caracteristicas Adicionales</h4>
+
+        <p class="text-muted mt-3"><i class="fa fa-home pl-lg-5 pl-sm-2"> Tipo de inmueble </i> {{inmueble.tipo}}</p>
+        <p *ngIf="inmueble.estado != 'nuevo'" class="text-muted"><i class="fa fa-hourglass-end pl-lg-5 pl-sm-2"> Antiguedad</i> {{inmueble.antiguedad}} años</p>
+        <p class="text-muted"><i class="fa fa-road pl-lg-5 pl-sm-2"> Estado</i> {{inmueble.estado}}</p>
+        <p *ngIf="inmueble.garaje == true" class="text-muted"><i class="fa fa-car pl-lg-5 pl-sm-2"> Garaje</i></p>
+
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p class="legal">© Copyright - Técnica & Arquitectura - <a style="text-decoration: none;" [routerLink]="['/legal']"><strong>Legal</strong></a></p>
+
+    <div class="row">
+
+        <div class="col-lg-12 d-flex justify-content-center align-items-center" style="font-size: 29px;">
+            <div style="float: left;">Técncica</div>
+            <div style="float: left; padding-left: 8px; padding-right: 8px; color: #dc3545;">&</div>
+            <div style="float: left;">Arquitectura</div>
+        </div>
+
+        <div class="col-lg-12 pt-3">
+            <p class="text-center">C/ San Francisco nº14 local bajo</p>
+            <p class="text-center" style="color: #dc3545; font-weight: 500;margin-top: -13px; margin-bottom: 0px;">06430 Badajoz</p>
+            <p class="text-center">Zalamea de la Serena</p>
+        </div>
+
+    </div>
+
+</footer>

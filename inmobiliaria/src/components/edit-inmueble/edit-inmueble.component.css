@@ -1,0 +1,57 @@
+.head {
+    background-color: #373535;
+    padding: 10px 0;
+    height: 70px;
+}
+
+.titulo {
+    overflow: hidden;
+    color: white;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.return {
+    color: white;
+    text-decoration: none;
+}
+
+.return:hover {
+    color: #e80f46;
+
+}
+
+.div-fotos {
+    background-color: #EAE6E6;
+    margin-top: 70px;
+}
+
+.text1{
+	font-weight: 900;
+	font-size: 14px;
+    position: absolute;
+}
+
+.line{
+	border-bottom: 1px solid #ff3c48;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+    margin-left: 25px;
+    margin-right: 25px;
+    width: 87px;
+    display: inline-block;
+}
+
+.formulario {
+    border: 1px solid darkgray;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.opcional {
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+

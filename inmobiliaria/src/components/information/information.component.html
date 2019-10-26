@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg head no-gutters">
+    <!-- .container nos permite centrar el contenido de nuestro menu, esta clase es opcional y podemos encerrar el menu <nav> o incluir el contenedor dentro del <nav> -->
+    <div class="container">
+        <!-- Nos sirve para agregar un logotipo al menu -->
+        <img class="float-left logo img-fluid navbar-brand" src="../assets/images/logo-inmobiliaria.svg" height="110" width="150" alt="Icono inmobiliaria">
+
+        <!-- Nos permite usar el componente collapse para dispositivos moviles -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menu de Navegacion">
+            <img class="img-fluid" src="../assets/images/menu.svg" height="30" width="30" alt="Icono menu">  
+        </button>
+
+        <div class="collapse navbar-collapse ml-5" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/inmuebles']" [routerLinkActive]="['activado']">Inmuebles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/information']" [routerLinkActive]="['activado']">Quienes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/contactar']" [routerLinkActive]="['activado']">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/hipoteca']" [routerLinkActive]="['activado']">Calcula tu Hipoteca</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="row" style="z-index: 10;">
+
+    <div class="col-12 div-img pt-4 no-gutters">
+
+        <div class="text1">AGENCIA INMOBILIARIA
+            <div class="line"></div>
+        </div>
+
+        <div class="text2">BUSCAMOS TU HOGAR</div>
+
+        <img class="img-fluid img-inmo" src="../../assets/images/agencia.jpg" alt="Imagen inmobiliaria" width="100%" height="200">
+
+    </div>
+
+</div>
+
+<div class="row pt-5">
+
+    <div class="col-lg-4 col-sm-6">
+
+        <h4>QUIEN SOMOS</h4>
+
+        <p class="pt-3">Somos un estudio joven creado con el fin de dar soluciones profesionales en las áreas de Edificación, Urbanismo y Diseño Interior.<br><br> Damos respuesta a proyectos de ARQUITECTURA en sus diversas fases y ámbitos de actuación Residencial, Oficinas,
+            Hotelero, Edificios Institucionales, Equipamientos Deportivos, Urbanismo y Paisaje que la sociedad reclama hoy en día, dedicando todo nuestro esfuerzo para que nuestro trabajo satisfaga las expectativas y agradecer la confianza de nuestros
+            clientes depositada en nosotros.
+        </p>
+
+    </div>
+
+    <div class="col-lg-4 col-sm-6">
+
+        <p style="margin-top: 51px;">El Estudio cuenta con la colaboración de aparejadores e<br> ingenieros externos y centra sus esfuerzos en ofrecer a<br> sus clientes un servicio de consultoría integral y de asesoramiento, realizando proyectos de edificación: ejecución de obra
+            nueva y rehabilitación, expedientes<br> de legalización y proyectos de derribo, valoraciones y tasaciones, cálculos de estructuras e instalaciones,<br> reforma de locales y diseño de interiores; y de urbanismo: planes parciales, proyectos
+            de urbanización y proyectos<br> de reparcelación.
+        </p>
+
+
+    </div>
+
+    <div class="col-lg-4 col-sm-12">
+
+        <agm-map [zoom]="16" [latitude]="lat" [longitude]="lng">
+            <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+
+    </div>
+
+</div>
+
+<footer>
+
+    <p class="legal">© Copyright - Técnica & Arquitectura - <a style="text-decoration: none;" [routerLink]="['/legal']"><strong>Legal</strong></a></p>
+
+    <div class="row">
+
+        <div class="col-lg-12 d-flex justify-content-center align-items-center" style="font-size: 29px;">
+            <div style="float: left;">Técncica</div>
+            <div style="float: left; padding-left: 8px; padding-right: 8px; color: #dc3545;">&</div>
+            <div style="float: left;">Arquitectura</div>
+        </div>
+
+        <div class="col-lg-12 pt-3">
+            <p class="text-center">C/ San Francisco nº14 local bajo</p>
+            <p class="text-center" style="color: #dc3545; font-weight: 500;margin-top: -13px; margin-bottom: 0px;">06430 Badajoz</p>
+            <p class="text-center">Zalamea de la Serena</p>
+        </div>
+
+    </div>
+
+</footer>

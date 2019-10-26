@@ -1,0 +1,33 @@
+.head {
+    background-color: #373535;
+    padding: 10px 0;
+    height: 70px;
+}
+
+.titulo {
+    overflow: hidden;
+    color: white;
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.adcesorios{
+    padding-top: 43px;
+    padding-left: 76px;
+}
+
+.line {
+    border-left: 1px solid #e80f46;
+    height: 362px;
+    margin-top: 29px;
+}
+
+.return {
+    color: white;
+    text-decoration: none;
+}
+
+.return:hover {
+    color: #e80f46;
+
+}

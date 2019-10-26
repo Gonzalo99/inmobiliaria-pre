@@ -1,0 +1,144 @@
+<nav class="navbar navbar-expand-lg head no-gutters">
+    <!-- .container nos permite centrar el contenido de nuestro menu, esta clase es opcional y podemos encerrar el menu <nav> o incluir el contenedor dentro del <nav> -->
+    <div class="container">
+        <!-- Nos sirve para agregar un logotipo al menu -->
+        <img class="float-left logo img-fluid navbar-brand" src="../assets/images/logo-inmobiliaria.svg" height="110" width="150" alt="Icono inmobiliaria">
+
+        <!-- Nos permite usar el componente collapse para dispositivos moviles -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menu de Navegacion">
+            <img class="img-fluid" src="../assets/images/menu.svg" height="30" width="30" alt="Icono menu">  
+        </button>
+
+        <div class="collapse navbar-collapse ml-5" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/inmuebles']" [routerLinkActive]="['activado']">Inmuebles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/information']" [routerLinkActive]="['activado']">Quienes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/contactar']" [routerLinkActive]="['activado']">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/hipoteca']" [routerLinkActive]="['activado']">Calcula tu Hipoteca</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+<div class="row correo" style="z-index: 10;">
+    <div class="col-8 offset-2">
+        <img class="img-fluid float-center" src="https://bsw.es/wp-content/uploads/contactar-845x321.jpg" alt="Sobre de correo">
+    </div>
+</div>
+
+<div class="row mt-5">
+
+    <div class="col-12 ml-4" style="display: inline-block;">
+
+        <p class="text-right" style="color: black; float: left;">+34 924 780 548</p>
+
+        <img class="img-fluid icono-head" src="../assets/images/llamada-telefonica.svg" height="30" width="30" alt="Icono telefono">
+
+    </div>
+
+    <div class="col-12 ml-4" style="display: inline-block;">
+
+        <p class="text-right" style="color: black; float: left;">arquitectura-inmobiliaria@hotmail.es</p>
+
+        <img class="img-fluid icono-head" src="../assets/images/email.svg" height="30" width="30" alt="Icono email">
+
+    </div>
+
+</div>
+
+<div class="row">
+
+    <div class="col mt-5">
+        <h3 class="text-center display-3">Contactar</h3>
+
+        <hr>
+    </div>
+
+</div>
+
+<div class="row mt-3">
+    <div class="col">
+        <form #formEmail="ngForm" (ngSubmit)="sendEmail()">
+            <div class="form-group row">
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="nombre">Nombre*</label>
+                    <input type="text" #nombre="ngModel" [(ngModel)]="email.nombre" class="form-control" placeholder="Nombre" name="nombre" id="nombre" required>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="apellidos">Apellidos*</label>
+                    <input type="text" #apellidos="ngModel" [(ngModel)]="email.apellidos" class="form-control" placeholder="Apellidos" name="apellidos" id="apellidos" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="asunto">Asunto*</label>
+                    <input type="text" #asunto="ngModel" [(ngModel)]="email.asunto" class="form-control" placeholder="Asunto" name="asunto" id="asunto" required>
+                </div>
+                <div class="col-12 col-md-6 mb-3">
+                    <label for="correo">Correo*</label>
+                    <input type="text" #correo="ngModel" [(ngModel)]="email.correo" class="form-control" placeholder="Correo" name="correo" id="correo" required>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-12 mb-3">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea #mensaje="ngModel" [(ngModel)]="email.mensaje" name="mensaje" id="mensaje" class="form-control"></textarea>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <div class="col-12 text-center">
+                    <label class="form-check-label">
+                        <input type="checkbox" [(ngModel)]="termino" name="terminos" id="terminos" class="form-check-input mr-2 mb-3" required>Acepto Terminos y Condiciones
+                    </label>
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-sm-9 col-md-4 mt-3">
+                            <button class="btn boton btn-block" [disabled]="!formEmail.form.valid" type="submit">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="col-12">
+        <div *ngIf="correct_email == true" class="alert-success mt-3">
+            <p class="pt-2 pb-2 text-center">Su mensaje ha sido enviado.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+
+    <p class="legal">© Copyright - Técnica & Arquitectura - <a style="text-decoration: none;" [routerLink]="['/legal']"><strong>Legal</strong></a></p>
+
+    <div class="row">
+
+        <div class="col-lg-12 d-flex justify-content-center align-items-center" style="font-size: 29px;">
+            <div style="float: left;">Técncica</div>
+            <div style="float: left; padding-left: 8px; padding-right: 8px; color: #dc3545;">&</div>
+            <div style="float: left;">Arquitectura</div>
+        </div>
+
+        <div class="col-lg-12 pt-3">
+            <p class="text-center">C/ San Francisco nº14 local bajo</p>
+            <p class="text-center" style="color: #dc3545; font-weight: 500;margin-top: -13px; margin-bottom: 0px;">06430 Badajoz</p>
+            <p class="text-center">Zalamea de la Serena</p>
+        </div>
+
+    </div>
+
+</footer>

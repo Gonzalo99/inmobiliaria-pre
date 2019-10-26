@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg head no-gutters">
+    <!-- .container nos permite centrar el contenido de nuestro menu, esta clase es opcional y podemos encerrar el menu <nav> o incluir el contenedor dentro del <nav> -->
+    <div class="container">
+        <!-- Nos sirve para agregar un logotipo al menu -->
+        <img class="float-left logo img-fluid navbar-brand" src="../assets/images/logo-inmobiliaria.svg" height="110" width="150" alt="Icono inmobiliaria">
+
+        <!-- Nos permite usar el componente collapse para dispositivos moviles -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Menu de Navegacion">
+            <img class="img-fluid" src="../assets/images/menu.svg" height="30" width="30" alt="Icono menu">  
+        </button>
+
+        <div class="collapse navbar-collapse ml-5" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/inmuebles']" [routerLinkActive]="['activado']">Inmuebles</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/information']" [routerLinkActive]="['activado']">Quienes somos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/contactar']" [routerLinkActive]="['activado']">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-filtro nav-link" [routerLink]="['/hipoteca']" [routerLinkActive]="['activado']">Calcula tu Hipoteca</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="row">
+
+    <div class="col-8 error offset-2">
+        <p class="text-center font-weight-bold pt-4" style="font-size: 28px;">Error!! Página no encontrada.</p>
+        <img class="imagen" src="../../assets/images/error-404.svg" alt="Icono error" width="70" height="70">
+    </div>
+
+</div>

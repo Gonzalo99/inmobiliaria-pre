@@ -1,0 +1,96 @@
+.head {
+    top: 0;
+    width: 100%;
+    height: 109px;
+    z-index: 20;
+    background-color: #e80f46;
+}
+
+.icono-head {
+    margin-left: 10px;
+}
+
+.bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-filtro {
+    color: black;
+}
+
+.btn-filtro:hover {
+    border: 1px solid white;
+    background-color: white;
+    border-radius: 4px;
+}
+
+.activado {
+    background-color: white;
+    color: black;
+}
+
+.img-anuncio {
+    padding-top: 40px;
+}
+
+.title-inmueble {
+    color: black;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+.price:hover {
+    color: red;
+}
+
+#imagen {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    position: relative;
+}
+
+.boton-ret {
+    position: absolute;
+    height: 370px;
+    background-color: transparent;
+    border: none;
+}
+
+.boton-ret:hover {
+    background-color: rgba(243, 136, 136, 0.342);
+}
+
+.boton-ava {
+    position: absolute;
+    height: 370px;
+    background-color: transparent;
+    border: none;
+    margin-left: -28px;
+}
+
+.boton-ava:hover {
+    background-color: rgba(243, 136, 136, 0.342);
+}
+
+footer {
+    background: #4C555A;
+    height: 190px;
+    margin-top: 70px;
+    color: white;
+}
+
+.legal {
+    font-size: 10px;
+}
+
+.return {
+    color: black;
+    text-decoration: none;
+}
+
+.return:hover {
+    color: #e80f46;
+}
